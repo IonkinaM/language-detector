@@ -27,7 +27,7 @@ public class LanguageDetectionController {
     ) {
         try {
             String language = detector.detectLanguageFromFile(file);
-            return ResponseEntity.ok("Detected language: " + language);
+            return ResponseEntity.ok(language);
         } catch (IOException e) {
             return ResponseEntity.badRequest().body("Error processing file: " + e.getMessage());
         }
